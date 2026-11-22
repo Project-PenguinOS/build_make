@@ -26,8 +26,10 @@ PRODUCT_VENDOR_PROPERTIES := \
 PRODUCT_COPY_FILES :=
 
 ifneq ($(TARGET_IS_COMPUTE),true)
+ifneq ($(TARGET_IS_QLMD), true)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
+endif
 endif
 
 ifeq ($(AOSPA_BUILD),)
